@@ -1,17 +1,20 @@
 ---
-language:
+language: 
 - zh
 tags:
 - bert
 license: "apache-2.0"
+
+tasks:
+- fill-mask
 ---
 
 # Please use 'Bert' related functions to load this model!
 
 ## Chinese BERT with Whole Word Masking
-For further accelerating Chinese natural language processing, we provide **Chinese pre-trained BERT with Whole Word Masking**.
+For further accelerating Chinese natural language processing, we provide **Chinese pre-trained BERT with Whole Word Masking**. 
 
-**[Pre-Training with Whole Word Masking for Chinese BERT](https://arxiv.org/abs/1906.08101)**
+**[Pre-Training with Whole Word Masking for Chinese BERT](https://arxiv.org/abs/1906.08101)**  
 Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Ziqing Yang, Shijin Wang, Guoping Hu
 
 This repository is developed based on：https://github.com/google-research/bert
@@ -24,6 +27,23 @@ You may also interested in,
 - Knowledge Distillation Toolkit - TextBrewer: https://github.com/airaria/TextBrewer
 
 More resources by HFL: https://github.com/ymcui/HFL-Anthology
+
+### 示例代码
+```python
+from modelscope.models import Model
+from modelscope.pipelines import pipeline
+from modelscope.utils.constant import Tasks
+
+if __name__ == '__main__':
+    task = Tasks.fill_mask
+    sentence1 = '巴黎是[MASK]国的首都。'
+    model_id = 'dienstag/chinese-roberta-wwm-ext-large'
+    model = Model.from_pretrained(model_id)
+    pipeline_ins = pipeline(task=Tasks.fill_mask,
+                            model=model,
+                            model_revision='v1.0.0')
+    print(pipeline_ins(input=sentence1))
+```
 
 ## Citation
 If you find the technical report or resource is useful, please cite the following technical report in your paper.
@@ -46,7 +66,7 @@ If you find the technical report or resource is useful, please cite the followin
     pages = "657--668",
 }
 ```
-- Secondary: https://arxiv.org/abs/1906.08101
+- Secondary: https://arxiv.org/abs/1906.08101  
 ```
 @article{chinese-bert-wwm,
   title={Pre-Training with Whole Word Masking for Chinese BERT},

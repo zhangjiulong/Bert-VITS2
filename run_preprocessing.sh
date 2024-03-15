@@ -1,0 +1,2 @@
+export MKL_SERVICE_FORCE_INTEL=1
+python webui_preprocess.py
