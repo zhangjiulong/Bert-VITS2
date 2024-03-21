@@ -8,6 +8,11 @@ docker run -e "http_proxy=http://192.168.200.26:51837" -e "https_proxy=http://19
 export http_proxy=http://127.0.0.1:51837
 export https_proxy=http://127.0.0.1:51837
 
+# 取消设置代理
+unset https_proxy
+unset http_proxy
+
+
 # 验证代理
 curl https://www.google.com.hk
 
@@ -16,6 +21,35 @@ ps aux | grep google | awk '{print $2'} | xargs -i kill -9 {}
 
 # 安装工具
 apt install iputils
+apt install sox
 
 # 运行preprocessing 需要指定环境变量
 export MKL_SERVICE_FORCE_INTEL=1
+
+# 文件转换
+ffmpeg -i 1_B.mp3 -acodec pcm_s16le -ar 16000 -ac 2 output.wav
+
+# 参考资料
+> https://zhuanlan.zhihu.com/p/680339733
+
+# VIST
+## GAN(Generative Adversial Networks)
+## VAE(Variational Auto-encoder)
+1. 后验分布即目标音频
+> https://zhuanlan.zhihu.com/p/620113235
+> https://www.zhangzhenhu.com/aigc/%E5%8F%98%E5%88%86%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8.html(推导)
+> https://www.shenxiaohai.me/pytorch-tutorial-advanced-02/
+
+
+
+## FLOW
+预测声音时长，增强真实感。
+
+# VIST2
+Duration Prediction：VITS中使用的是FLOW++一个很复杂的结构，耗时长，为了平衡耗时和性能，VITS2将其改变为一个基于GAN的结构。
+Alignment Search：VITS中使用动态规划算法来强制对齐，这样得到的结构太固定化了。VITS2中在MAS中引入noise，增加多样性，为模型提供了额外的机会来搜索其他对齐。
+Speaker-conditioned：在text-encoding中加入speaker-embedding作为condition。
+Normalizing Flow with the transformer block：在Flow的结构中加入transformer（原本只有CNN），使得模型能获得长距离的依赖，交流不同位置的特征信息。
+
+# 去噪声
+https://github.com/Anjok07/ultimatevocalremovergui
