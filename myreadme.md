@@ -23,6 +23,9 @@ ps aux | grep google | awk '{print $2'} | xargs -i kill -9 {}
 apt install iputils
 apt install sox
 
+# wget ssl connection error
+update-ca-certificates --fresh
+
 # 运行preprocessing 需要指定环境变量
 export MKL_SERVICE_FORCE_INTEL=1
 
@@ -33,6 +36,10 @@ ffmpeg -i 1_B.mp3 -acodec pcm_s16le -ar 16000 -ac 2 output.wav
 > https://zhuanlan.zhihu.com/p/680339733
 
 # VIST
+> https://zhuanlan.zhihu.com/p/571040094
+> https://www.zywvvd.com/notes/study/deep-learning/tts/vits/vits/
+> https://www.bilibili.com/video/BV1Nk4y1A7SL/?vd_source=64f63f34985a708ab738d22e9d0dd177 视频介绍
+
 ## GAN(Generative Adversial Networks)
 ## VAE(Variational Auto-encoder)
 1. 后验分布即目标音频
@@ -40,10 +47,16 @@ ffmpeg -i 1_B.mp3 -acodec pcm_s16le -ar 16000 -ac 2 output.wav
 > https://www.zhangzhenhu.com/aigc/%E5%8F%98%E5%88%86%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8.html(推导)
 > https://www.shenxiaohai.me/pytorch-tutorial-advanced-02/
 
-
+## Alignment 
+> https://www.cnblogs.com/Edison-zzc/p/17589837.html
 
 ## FLOW
 预测声音时长，增强真实感。
+> https://zhuanlan.zhihu.com/p/142567194
+> https://spaces.ac.cn/archives/5776
+
+## 时长估计
+> https://zhuanlan.zhihu.com/p/571040094 公式推导
 
 # VIST2
 Duration Prediction：VITS中使用的是FLOW++一个很复杂的结构，耗时长，为了平衡耗时和性能，VITS2将其改变为一个基于GAN的结构。
@@ -53,3 +66,10 @@ Normalizing Flow with the transformer block：在Flow的结构中加入transform
 
 # 去噪声
 https://github.com/Anjok07/ultimatevocalremovergui
+
+# 其他仓库
+https://github.com/v3ucn/Bert-VITS2_V210 支持 中英混合
+https://github.com/v3ucn/Bert-vits2-V2.3  https://v3u.cn/a_id_341
+
+# whisper
+https://github.com/shuaijiang/Whisper-Finetune whisper 数据微调 
