@@ -47,10 +47,14 @@ ffmpeg -i 1_B.mp3 -acodec pcm_s16le -ar 16000 -ac 2 output.wav
 > https://www.zhangzhenhu.com/aigc/%E5%8F%98%E5%88%86%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8.html(推导)
 > https://www.shenxiaohai.me/pytorch-tutorial-advanced-02/
 
+## NICE
+> https://kexue.fm/archives/5776
+
 ## Alignment 
 > https://www.cnblogs.com/Edison-zzc/p/17589837.html
 
 ## FLOW
+变量变换定理
 预测声音时长，增强真实感。
 > https://zhuanlan.zhihu.com/p/142567194
 > https://spaces.ac.cn/archives/5776
