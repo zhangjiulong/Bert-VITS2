@@ -2,6 +2,8 @@ import os
 import json
 import subprocess
 import shutil
+import argparse
+
 
 def get_path(data_dir):
     start_path = os.path.join("./data", data_dir)
@@ -77,18 +79,24 @@ def bert_gen(data_dir):
     )
     return "BERT 特征文件生成完成"
 
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description="processing corpus for tts")
+    parser.add_argument("--data", type=str, help="请指定 --data ")
+    parser.add_argument("--batch_size", type=int, default=8, help="batch_size")
+    args = parser.parse_args()
+    
+    
+    data_dir = args.data
+    batch_size = args.batch_size
 
-data_dir = 'wanzi_lizi'
-batch_size = 8
+    print(f'generating config infos data dir {data_dir} batch size {batch_size}')
+    generate_config(data_dir, batch_size)
 
-print(f'generating config infos data dir {data_dir} batch size {batch_size}')
-generate_config(data_dir, batch_size)
+    print(f'resampling datas {data_dir}')
+    resample(data_dir)
 
-print(f'resampling datas {data_dir}')
-resample(data_dir)
+    print(f'processing txt {data_dir}')
+    preprocess_text(data_dir)
 
-print(f'processing txt {data_dir}')
-preprocess_text(data_dir)
-
-print(f'generating bert features {data_dir}')
-bert_gen(data_dir)
+    print(f'generating bert features {data_dir}')
+    bert_gen(data_dir)
