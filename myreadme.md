@@ -79,3 +79,7 @@ https://github.com/v3ucn/Bert-vits2-V2.3  https://v3u.cn/a_id_341
 
 # whisper
 https://github.com/shuaijiang/Whisper-Finetune whisper 数据微调 
+
+
+# tts镜像版本管理
+1. 2.0 迁移版本
