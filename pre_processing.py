@@ -85,7 +85,14 @@ if __name__ == '__main__':
     parser.add_argument("--batch_size", type=int, default=8, help="batch_size")
     args = parser.parse_args()
     
-    
+    "├── data\n"
+    "│   ├── {你的数据集名称}\n"
+    "│   │   ├── esd.list\n"
+    "│   │   ├── raw\n"
+    "│   │   │   ├── ****.wav\n"
+    "│   │   │   ├── ****.wav\n"
+    "│   │   │   ├── ...\n"
+
     data_dir = args.data
     batch_size = args.batch_size
 
