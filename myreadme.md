@@ -41,6 +41,8 @@ ffmpeg -i 1_B.mp3 -acodec pcm_s16le -ar 16000 -ac 2 output.wav
 > https://www.bilibili.com/video/BV1Nk4y1A7SL/?vd_source=64f63f34985a708ab738d22e9d0dd177 视频介绍
 
 ## GAN(Generative Adversial Networks)
+> https://zhuanlan.zhihu.com/p/408766083
+
 ## VAE(Variational Auto-encoder)
 1. 后验分布即目标音频
 > https://zhuanlan.zhihu.com/p/620113235
