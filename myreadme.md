@@ -80,6 +80,9 @@ https://github.com/v3ucn/Bert-vits2-V2.3  https://v3u.cn/a_id_341
 # whisper
 https://github.com/shuaijiang/Whisper-Finetune whisper 数据微调 
 
+# history cmds
+docker  commit  -m  'tts环境迁移版'  -a  'zhangjl19'  a2939dba2893  tts:v2.0
+docker  save  -o  ts.2.0.tar  tts:v2.0
 
 # tts镜像版本管理
 1. 2.0 迁移版本
