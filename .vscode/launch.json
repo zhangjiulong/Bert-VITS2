@@ -13,7 +13,7 @@
             "justMyCode": false,
             "args": [
                 "--nproc_per_node=1",
-                "/workspace/projects/Bert-VITS2/train_ms.py",
+                "/workspace/projects/Bert-VITS2/train_ms.py"
             ]
         }
     ]
