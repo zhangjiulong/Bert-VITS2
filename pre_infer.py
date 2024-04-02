@@ -391,7 +391,7 @@ def gr_util(item):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="ttsing")
-    parser.add_argument("--speaker", type=str, default='lizimo', help="请指定 --speaker ")
+    parser.add_argument("--speaker", type=str, default='lizimo', help="speaker ")
     parser.add_argument("--sdp_ratio", type=float, default=0.5, help="sdp_ratio")
     parser.add_argument("--noise_scale", type=float, default=0.6, help="noise_scale")
     parser.add_argument("--noise_scale_w", type=float, default=0.9, help="noise_scale_w")
@@ -425,8 +425,8 @@ if __name__ == "__main__":
     
     status, (samp_rate, wav_vec) = tts_fn(text, speaker, sdp_ratio, noise_scale, noise_scale_w, length_scale, language, reference_audio, emotion, prompt_mode)
     # audio_vector = np.array(wav_vec, dtype=np.float32)
-
-    os.remove('./tts.wav')
+    if os.path.exists('./tts.wav'):
+        os.remove('./tts.wav')
     write('./tts.wav', samp_rate, wav_vec)
     
     # inputs=[
