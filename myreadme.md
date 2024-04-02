@@ -49,6 +49,11 @@ ffmpeg -i 1_B.mp3 -acodec pcm_s16le -ar 16000 -ac 2 output.wav
 > https://www.zhangzhenhu.com/aigc/%E5%8F%98%E5%88%86%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8.html(推导)
 > https://www.shenxiaohai.me/pytorch-tutorial-advanced-02/
 
+
+## 变量替换
+> https://blog.csdn.net/weixin_48524215/article/details/123077490
+> https://blog.csdn.net/qq_46401672/article/details/124887162
+
 ## NICE
 > https://kexue.fm/archives/5776
 

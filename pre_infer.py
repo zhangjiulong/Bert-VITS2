@@ -418,6 +418,7 @@ if __name__ == "__main__":
     noise_scale_w = args.noise_scale_w
     length_scale = args.length_scale
     language = 'ZH'
+    
     status, _ = tts_fn(text, speaker, sdp_ratio, noise_scale, noise_scale_w, length_scale)
     
     print(status)

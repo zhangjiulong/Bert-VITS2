@@ -15,6 +15,8 @@ logging.basicConfig(
 )
 
 logger = logging.getLogger(__name__)
+del os.environ['http_proxy']
+del os.environ['https_proxy']
 
 import torch
 import utils
