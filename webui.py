@@ -147,6 +147,7 @@ def tts_split(
     style_text,
     style_weight,
 ):
+    print(f'lang {language} reference_audio {reference_audio} emotion {emotion} prompt_mode {prompt_mode}')
     while text.find("\n\n") != -1:
         text = text.replace("\n\n", "\n")
     text = text.replace("|", "")
@@ -330,6 +331,8 @@ def tts_fn(
     style_text=None,
     style_weight=0,
 ):
+    print(f'lang {language} reference_audio {reference_audio} emotion {emotion} prompt_mode {prompt_mode}')
+
     if style_text == "":
         style_text = None
     if prompt_mode == "Audio prompt":
