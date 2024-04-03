@@ -50,7 +50,7 @@ ffmpeg -i 1_B.mp3 -acodec pcm_s16le -ar 16000 -ac 2 output.wav
 > https://www.shenxiaohai.me/pytorch-tutorial-advanced-02/
 
 
-## 变量替换
+## 变量替换(change-ofvariables)
 > https://blog.csdn.net/weixin_48524215/article/details/123077490
 > https://blog.csdn.net/qq_46401672/article/details/124887162
 
