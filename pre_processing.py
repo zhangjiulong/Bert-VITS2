@@ -81,7 +81,7 @@ def bert_gen(data_dir):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="processing corpus for tts")
-    parser.add_argument("--data", type=str, help="请指定 --data ")
+    parser.add_argument("--data", type=str, help="请指定角色名 --data ", required=True)
     parser.add_argument("--batch_size", type=int, default=8, help="batch_size")
     args = parser.parse_args()
     

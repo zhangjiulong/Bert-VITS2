@@ -91,3 +91,9 @@ docker  save  -o  ts.2.0.tar  tts:v2.0
 
 # tts镜像版本管理
 1. 2.0 迁移版本
+
+# 其他技术
+fastspeech
+
+# asr
+https://modelscope.cn/models/iic/speech_paraformer-large_asr_nat-zh-cn-16k-common-vocab8404-pytorch/summary
