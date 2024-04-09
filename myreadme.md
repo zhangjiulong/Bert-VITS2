@@ -39,6 +39,7 @@ ffmpeg -i 1_B.mp3 -acodec pcm_s16le -ar 16000 -ac 2 output.wav
 > https://zhuanlan.zhihu.com/p/571040094
 > https://www.zywvvd.com/notes/study/deep-learning/tts/vits/vits/
 > https://www.bilibili.com/video/BV1Nk4y1A7SL/?vd_source=64f63f34985a708ab738d22e9d0dd177 视频介绍
+> https://github.com/CjangCjengh/vits 不需要底模
 
 ## GAN(Generative Adversial Networks)
 > https://zhuanlan.zhihu.com/p/408766083
